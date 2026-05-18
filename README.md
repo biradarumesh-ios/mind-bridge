@@ -105,3 +105,20 @@ The project follows MVVM architecture:
 - iPad optimization
 - Offline AI caching
 
+## Screenshots
+
+### Home Screen
+
+![Home](Screenshots/home.png)
+
+### Chat Screen
+
+![Chat](Screenshots/chat.png)
+
+### Voice Mode
+
+![Voice](Screenshots/voice.png)
+
+### Settings
+
+![Settings](Screenshots/settings.png)
