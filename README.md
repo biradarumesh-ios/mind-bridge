@@ -122,3 +122,7 @@ The project follows MVVM architecture:
 ### Settings
 
 ![Settings](Screenshots/settings.png)
+
+### Image
+
+![Image](Screenshots/image.png)
