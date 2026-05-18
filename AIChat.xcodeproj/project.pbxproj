@@ -13,6 +13,10 @@
 		1809A6682FB30A910020DC7C /* VoiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809A6672FB30A910020DC7C /* VoiceButton.swift */; };
 		1809A66A2FB30F730020DC7C /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809A6692FB30F730020DC7C /* SpeechService.swift */; };
 		1809A66C2FB3189E0020DC7C /* VoiceLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809A66B2FB3189E0020DC7C /* VoiceLanguage.swift */; };
+		18171DE12FBB34AA00B09C7F /* simulator_screenshot_552E6543-401C-4FAA-A570-EFFD5A185CC3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18171DE02FBB34A900B09C7F /* simulator_screenshot_552E6543-401C-4FAA-A570-EFFD5A185CC3.png */; };
+		18171DE32FBB34CE00B09C7F /* simulator_screenshot_4BAC5153-64BC-4BFE-9B6C-18764BC01976.png in Resources */ = {isa = PBXBuildFile; fileRef = 18171DE22FBB34CE00B09C7F /* simulator_screenshot_4BAC5153-64BC-4BFE-9B6C-18764BC01976.png */; };
+		18171DE52FBB350300B09C7F /* simulator_screenshot_D4FA694F-D39C-48F8-9620-568BDCF0206F.png in Resources */ = {isa = PBXBuildFile; fileRef = 18171DE42FBB350300B09C7F /* simulator_screenshot_D4FA694F-D39C-48F8-9620-568BDCF0206F.png */; };
+		18171DE72FBB353A00B09C7F /* simulator_screenshot_F43A41B2-E09C-41AC-A897-A68E44E51171.png in Resources */ = {isa = PBXBuildFile; fileRef = 18171DE62FBB353A00B09C7F /* simulator_screenshot_F43A41B2-E09C-41AC-A897-A68E44E51171.png */; };
 		183F849B2FB1C88B004750B1 /* AIChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F849A2FB1C88B004750B1 /* AIChatApp.swift */; };
 		183F849D2FB1C88B004750B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F849C2FB1C88B004750B1 /* ContentView.swift */; };
 		183F849F2FB1C88E004750B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183F849E2FB1C88E004750B1 /* Assets.xcassets */; };
@@ -54,6 +58,10 @@
 		1809A6672FB30A910020DC7C /* VoiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceButton.swift; sourceTree = "<group>"; };
 		1809A6692FB30F730020DC7C /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
 		1809A66B2FB3189E0020DC7C /* VoiceLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceLanguage.swift; sourceTree = "<group>"; };
+		18171DE02FBB34A900B09C7F /* simulator_screenshot_552E6543-401C-4FAA-A570-EFFD5A185CC3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simulator_screenshot_552E6543-401C-4FAA-A570-EFFD5A185CC3.png"; sourceTree = "<group>"; };
+		18171DE22FBB34CE00B09C7F /* simulator_screenshot_4BAC5153-64BC-4BFE-9B6C-18764BC01976.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simulator_screenshot_4BAC5153-64BC-4BFE-9B6C-18764BC01976.png"; sourceTree = "<group>"; };
+		18171DE42FBB350300B09C7F /* simulator_screenshot_D4FA694F-D39C-48F8-9620-568BDCF0206F.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simulator_screenshot_D4FA694F-D39C-48F8-9620-568BDCF0206F.png"; sourceTree = "<group>"; };
+		18171DE62FBB353A00B09C7F /* simulator_screenshot_F43A41B2-E09C-41AC-A897-A68E44E51171.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simulator_screenshot_F43A41B2-E09C-41AC-A897-A68E44E51171.png"; sourceTree = "<group>"; };
 		183F84972FB1C88B004750B1 /* AIChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		183F849A2FB1C88B004750B1 /* AIChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatApp.swift; sourceTree = "<group>"; };
 		183F849C2FB1C88B004750B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,12 +109,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18171DDF2FBB348D00B09C7F /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				18171DE02FBB34A900B09C7F /* simulator_screenshot_552E6543-401C-4FAA-A570-EFFD5A185CC3.png */,
+				18171DE42FBB350300B09C7F /* simulator_screenshot_D4FA694F-D39C-48F8-9620-568BDCF0206F.png */,
+				18171DE22FBB34CE00B09C7F /* simulator_screenshot_4BAC5153-64BC-4BFE-9B6C-18764BC01976.png */,
+				18171DE62FBB353A00B09C7F /* simulator_screenshot_F43A41B2-E09C-41AC-A897-A68E44E51171.png */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		183F848E2FB1C88B004750B1 = {
 			isa = PBXGroup;
 			children = (
 				1898A2762FB3327E00C9AE57 /* Model */,
-				1898A2772FB3329200C9AE57 /* Views */,
 				1898A2782FB332A500C9AE57 /* ViewModel */,
+				1898A2772FB3329200C9AE57 /* Views */,
 				183F84992FB1C88B004750B1 /* AIChat */,
 				183F84AF2FB1C88F004750B1 /* AIChatTests */,
 				183F84B92FB1C88F004750B1 /* AIChatUITests */,
@@ -127,6 +146,7 @@
 		183F84992FB1C88B004750B1 /* AIChat */ = {
 			isa = PBXGroup;
 			children = (
+				18171DDF2FBB348D00B09C7F /* Screenshots */,
 				183F849A2FB1C88B004750B1 /* AIChatApp.swift */,
 				183F84CD2FB1C94E004750B1 /* ChatBubble.swift */,
 				183F849E2FB1C88E004750B1 /* Assets.xcassets */,
@@ -307,6 +327,10 @@
 			files = (
 				183F84A22FB1C88E004750B1 /* Preview Assets.xcassets in Resources */,
 				183F849F2FB1C88E004750B1 /* Assets.xcassets in Resources */,
+				18171DE72FBB353A00B09C7F /* simulator_screenshot_F43A41B2-E09C-41AC-A897-A68E44E51171.png in Resources */,
+				18171DE32FBB34CE00B09C7F /* simulator_screenshot_4BAC5153-64BC-4BFE-9B6C-18764BC01976.png in Resources */,
+				18171DE52FBB350300B09C7F /* simulator_screenshot_D4FA694F-D39C-48F8-9620-568BDCF0206F.png in Resources */,
+				18171DE12FBB34AA00B09C7F /* simulator_screenshot_552E6543-401C-4FAA-A570-EFFD5A185CC3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
