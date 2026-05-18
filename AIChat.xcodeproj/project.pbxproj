@@ -1,0 +1,717 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1809A6622FB308630020DC7C /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1809A6612FB308630020DC7C /* MarkdownUI */; };
+		1809A6642FB308790020DC7C /* MarkdownBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809A6632FB308790020DC7C /* MarkdownBubble.swift */; };
+		1809A6662FB30A590020DC7C /* VoiceInputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809A6652FB30A590020DC7C /* VoiceInputService.swift */; };
+		1809A6682FB30A910020DC7C /* VoiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809A6672FB30A910020DC7C /* VoiceButton.swift */; };
+		1809A66A2FB30F730020DC7C /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809A6692FB30F730020DC7C /* SpeechService.swift */; };
+		1809A66C2FB3189E0020DC7C /* VoiceLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809A66B2FB3189E0020DC7C /* VoiceLanguage.swift */; };
+		183F849B2FB1C88B004750B1 /* AIChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F849A2FB1C88B004750B1 /* AIChatApp.swift */; };
+		183F849D2FB1C88B004750B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F849C2FB1C88B004750B1 /* ContentView.swift */; };
+		183F849F2FB1C88E004750B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183F849E2FB1C88E004750B1 /* Assets.xcassets */; };
+		183F84A22FB1C88E004750B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183F84A12FB1C88E004750B1 /* Preview Assets.xcassets */; };
+		183F84A42FB1C88E004750B1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F84A32FB1C88E004750B1 /* Persistence.swift */; };
+		183F84A72FB1C88E004750B1 /* AIChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 183F84A52FB1C88E004750B1 /* AIChat.xcdatamodeld */; };
+		183F84B12FB1C88F004750B1 /* AIChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F84B02FB1C88F004750B1 /* AIChatTests.swift */; };
+		183F84BB2FB1C88F004750B1 /* AIChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F84BA2FB1C88F004750B1 /* AIChatUITests.swift */; };
+		183F84BD2FB1C88F004750B1 /* AIChatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F84BC2FB1C88F004750B1 /* AIChatUITestsLaunchTests.swift */; };
+		183F84CA2FB1C8EE004750B1 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F84C92FB1C8EE004750B1 /* ChatMessage.swift */; };
+		183F84CC2FB1C918004750B1 /* GeminiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F84CB2FB1C918004750B1 /* GeminiService.swift */; };
+		183F84CE2FB1C94E004750B1 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F84CD2FB1C94E004750B1 /* ChatBubble.swift */; };
+		183F84D02FB20070004750B1 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F84CF2FB20070004750B1 /* Conversation.swift */; };
+		183F84D22FB20093004750B1 /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F84D12FB20093004750B1 /* HistoryService.swift */; };
+		183F84D42FB200B1004750B1 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F84D32FB200B1004750B1 /* SideMenuView.swift */; };
+		183F84D62FB200D9004750B1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F84D52FB200D9004750B1 /* SettingsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		183F84AD2FB1C88F004750B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 183F848F2FB1C88B004750B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 183F84962FB1C88B004750B1;
+			remoteInfo = AIChat;
+		};
+		183F84B72FB1C88F004750B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 183F848F2FB1C88B004750B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 183F84962FB1C88B004750B1;
+			remoteInfo = AIChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1809A6632FB308790020DC7C /* MarkdownBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownBubble.swift; sourceTree = "<group>"; };
+		1809A6652FB30A590020DC7C /* VoiceInputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputService.swift; sourceTree = "<group>"; };
+		1809A6672FB30A910020DC7C /* VoiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceButton.swift; sourceTree = "<group>"; };
+		1809A6692FB30F730020DC7C /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
+		1809A66B2FB3189E0020DC7C /* VoiceLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceLanguage.swift; sourceTree = "<group>"; };
+		183F84972FB1C88B004750B1 /* AIChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		183F849A2FB1C88B004750B1 /* AIChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatApp.swift; sourceTree = "<group>"; };
+		183F849C2FB1C88B004750B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		183F849E2FB1C88E004750B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		183F84A12FB1C88E004750B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		183F84A32FB1C88E004750B1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		183F84A62FB1C88E004750B1 /* AIChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AIChat.xcdatamodel; sourceTree = "<group>"; };
+		183F84AC2FB1C88F004750B1 /* AIChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		183F84B02FB1C88F004750B1 /* AIChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatTests.swift; sourceTree = "<group>"; };
+		183F84B62FB1C88F004750B1 /* AIChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		183F84BA2FB1C88F004750B1 /* AIChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatUITests.swift; sourceTree = "<group>"; };
+		183F84BC2FB1C88F004750B1 /* AIChatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		183F84C92FB1C8EE004750B1 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		183F84CB2FB1C918004750B1 /* GeminiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiService.swift; sourceTree = "<group>"; };
+		183F84CD2FB1C94E004750B1 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
+		183F84CF2FB20070004750B1 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		183F84D12FB20093004750B1 /* HistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
+		183F84D32FB200B1004750B1 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		183F84D52FB200D9004750B1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		183F84942FB1C88B004750B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1809A6622FB308630020DC7C /* MarkdownUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		183F84A92FB1C88F004750B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		183F84B32FB1C88F004750B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		183F848E2FB1C88B004750B1 = {
+			isa = PBXGroup;
+			children = (
+				1898A2762FB3327E00C9AE57 /* Model */,
+				1898A2772FB3329200C9AE57 /* Views */,
+				1898A2782FB332A500C9AE57 /* ViewModel */,
+				183F84992FB1C88B004750B1 /* AIChat */,
+				183F84AF2FB1C88F004750B1 /* AIChatTests */,
+				183F84B92FB1C88F004750B1 /* AIChatUITests */,
+				183F84982FB1C88B004750B1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		183F84982FB1C88B004750B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				183F84972FB1C88B004750B1 /* AIChat.app */,
+				183F84AC2FB1C88F004750B1 /* AIChatTests.xctest */,
+				183F84B62FB1C88F004750B1 /* AIChatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		183F84992FB1C88B004750B1 /* AIChat */ = {
+			isa = PBXGroup;
+			children = (
+				183F849A2FB1C88B004750B1 /* AIChatApp.swift */,
+				183F84CD2FB1C94E004750B1 /* ChatBubble.swift */,
+				183F849E2FB1C88E004750B1 /* Assets.xcassets */,
+				183F84A32FB1C88E004750B1 /* Persistence.swift */,
+				183F84A52FB1C88E004750B1 /* AIChat.xcdatamodeld */,
+				183F84A02FB1C88E004750B1 /* Preview Content */,
+				1809A6632FB308790020DC7C /* MarkdownBubble.swift */,
+				1809A6672FB30A910020DC7C /* VoiceButton.swift */,
+			);
+			path = AIChat;
+			sourceTree = "<group>";
+		};
+		183F84A02FB1C88E004750B1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				183F84A12FB1C88E004750B1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		183F84AF2FB1C88F004750B1 /* AIChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				183F84B02FB1C88F004750B1 /* AIChatTests.swift */,
+			);
+			path = AIChatTests;
+			sourceTree = "<group>";
+		};
+		183F84B92FB1C88F004750B1 /* AIChatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				183F84BA2FB1C88F004750B1 /* AIChatUITests.swift */,
+				183F84BC2FB1C88F004750B1 /* AIChatUITestsLaunchTests.swift */,
+			);
+			path = AIChatUITests;
+			sourceTree = "<group>";
+		};
+		1898A2762FB3327E00C9AE57 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				183F84C92FB1C8EE004750B1 /* ChatMessage.swift */,
+				183F84CF2FB20070004750B1 /* Conversation.swift */,
+				1809A66B2FB3189E0020DC7C /* VoiceLanguage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1898A2772FB3329200C9AE57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				183F849C2FB1C88B004750B1 /* ContentView.swift */,
+				183F84D32FB200B1004750B1 /* SideMenuView.swift */,
+				183F84D52FB200D9004750B1 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1898A2782FB332A500C9AE57 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				183F84D12FB20093004750B1 /* HistoryService.swift */,
+				183F84CB2FB1C918004750B1 /* GeminiService.swift */,
+				1809A6692FB30F730020DC7C /* SpeechService.swift */,
+				1809A6652FB30A590020DC7C /* VoiceInputService.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		183F84962FB1C88B004750B1 /* AIChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 183F84C02FB1C88F004750B1 /* Build configuration list for PBXNativeTarget "AIChat" */;
+			buildPhases = (
+				183F84932FB1C88B004750B1 /* Sources */,
+				183F84942FB1C88B004750B1 /* Frameworks */,
+				183F84952FB1C88B004750B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AIChat;
+			packageProductDependencies = (
+				1809A6612FB308630020DC7C /* MarkdownUI */,
+			);
+			productName = AIChat;
+			productReference = 183F84972FB1C88B004750B1 /* AIChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		183F84AB2FB1C88F004750B1 /* AIChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 183F84C32FB1C88F004750B1 /* Build configuration list for PBXNativeTarget "AIChatTests" */;
+			buildPhases = (
+				183F84A82FB1C88F004750B1 /* Sources */,
+				183F84A92FB1C88F004750B1 /* Frameworks */,
+				183F84AA2FB1C88F004750B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				183F84AE2FB1C88F004750B1 /* PBXTargetDependency */,
+			);
+			name = AIChatTests;
+			productName = AIChatTests;
+			productReference = 183F84AC2FB1C88F004750B1 /* AIChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		183F84B52FB1C88F004750B1 /* AIChatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 183F84C62FB1C88F004750B1 /* Build configuration list for PBXNativeTarget "AIChatUITests" */;
+			buildPhases = (
+				183F84B22FB1C88F004750B1 /* Sources */,
+				183F84B32FB1C88F004750B1 /* Frameworks */,
+				183F84B42FB1C88F004750B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				183F84B82FB1C88F004750B1 /* PBXTargetDependency */,
+			);
+			name = AIChatUITests;
+			productName = AIChatUITests;
+			productReference = 183F84B62FB1C88F004750B1 /* AIChatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		183F848F2FB1C88B004750B1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					183F84962FB1C88B004750B1 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					183F84AB2FB1C88F004750B1 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 183F84962FB1C88B004750B1;
+					};
+					183F84B52FB1C88F004750B1 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 183F84962FB1C88B004750B1;
+					};
+				};
+			};
+			buildConfigurationList = 183F84922FB1C88B004750B1 /* Build configuration list for PBXProject "AIChat" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 183F848E2FB1C88B004750B1;
+			packageReferences = (
+				1809A6602FB308630020DC7C /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+			);
+			productRefGroup = 183F84982FB1C88B004750B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				183F84962FB1C88B004750B1 /* AIChat */,
+				183F84AB2FB1C88F004750B1 /* AIChatTests */,
+				183F84B52FB1C88F004750B1 /* AIChatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		183F84952FB1C88B004750B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				183F84A22FB1C88E004750B1 /* Preview Assets.xcassets in Resources */,
+				183F849F2FB1C88E004750B1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		183F84AA2FB1C88F004750B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		183F84B42FB1C88F004750B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		183F84932FB1C88B004750B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				183F84D02FB20070004750B1 /* Conversation.swift in Sources */,
+				183F84D22FB20093004750B1 /* HistoryService.swift in Sources */,
+				1809A66A2FB30F730020DC7C /* SpeechService.swift in Sources */,
+				1809A6642FB308790020DC7C /* MarkdownBubble.swift in Sources */,
+				183F84D42FB200B1004750B1 /* SideMenuView.swift in Sources */,
+				183F84A42FB1C88E004750B1 /* Persistence.swift in Sources */,
+				183F84A72FB1C88E004750B1 /* AIChat.xcdatamodeld in Sources */,
+				183F849D2FB1C88B004750B1 /* ContentView.swift in Sources */,
+				1809A66C2FB3189E0020DC7C /* VoiceLanguage.swift in Sources */,
+				183F84CA2FB1C8EE004750B1 /* ChatMessage.swift in Sources */,
+				1809A6662FB30A590020DC7C /* VoiceInputService.swift in Sources */,
+				183F84CC2FB1C918004750B1 /* GeminiService.swift in Sources */,
+				183F849B2FB1C88B004750B1 /* AIChatApp.swift in Sources */,
+				183F84CE2FB1C94E004750B1 /* ChatBubble.swift in Sources */,
+				1809A6682FB30A910020DC7C /* VoiceButton.swift in Sources */,
+				183F84D62FB200D9004750B1 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		183F84A82FB1C88F004750B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				183F84B12FB1C88F004750B1 /* AIChatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		183F84B22FB1C88F004750B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				183F84BD2FB1C88F004750B1 /* AIChatUITestsLaunchTests.swift in Sources */,
+				183F84BB2FB1C88F004750B1 /* AIChatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		183F84AE2FB1C88F004750B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 183F84962FB1C88B004750B1 /* AIChat */;
+			targetProxy = 183F84AD2FB1C88F004750B1 /* PBXContainerItemProxy */;
+		};
+		183F84B82FB1C88F004750B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 183F84962FB1C88B004750B1 /* AIChat */;
+			targetProxy = 183F84B72FB1C88F004750B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		183F84BE2FB1C88F004750B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		183F84BF2FB1C88F004750B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		183F84C12FB1C88F004750B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AIChat/Preview Content\"";
+				DEVELOPMENT_TEAM = 6DJ3A8FFVF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "AIChat needs microphone access for voice input";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "AIChat needs speech recognition to convert your voice to text";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mindmatrix.AIChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		183F84C22FB1C88F004750B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AIChat/Preview Content\"";
+				DEVELOPMENT_TEAM = 6DJ3A8FFVF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "AIChat needs microphone access for voice input";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "AIChat needs speech recognition to convert your voice to text";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mindmatrix.AIChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		183F84C42FB1C88F004750B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6DJ3A8FFVF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mindmatrix.AIChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIChat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AIChat";
+			};
+			name = Debug;
+		};
+		183F84C52FB1C88F004750B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6DJ3A8FFVF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mindmatrix.AIChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIChat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AIChat";
+			};
+			name = Release;
+		};
+		183F84C72FB1C88F004750B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6DJ3A8FFVF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mindmatrix.AIChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AIChat;
+			};
+			name = Debug;
+		};
+		183F84C82FB1C88F004750B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6DJ3A8FFVF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mindmatrix.AIChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AIChat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		183F84922FB1C88B004750B1 /* Build configuration list for PBXProject "AIChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				183F84BE2FB1C88F004750B1 /* Debug */,
+				183F84BF2FB1C88F004750B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		183F84C02FB1C88F004750B1 /* Build configuration list for PBXNativeTarget "AIChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				183F84C12FB1C88F004750B1 /* Debug */,
+				183F84C22FB1C88F004750B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		183F84C32FB1C88F004750B1 /* Build configuration list for PBXNativeTarget "AIChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				183F84C42FB1C88F004750B1 /* Debug */,
+				183F84C52FB1C88F004750B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		183F84C62FB1C88F004750B1 /* Build configuration list for PBXNativeTarget "AIChatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				183F84C72FB1C88F004750B1 /* Debug */,
+				183F84C82FB1C88F004750B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1809A6602FB308630020DC7C /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1809A6612FB308630020DC7C /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1809A6602FB308630020DC7C /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		183F84A52FB1C88E004750B1 /* AIChat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				183F84A62FB1C88E004750B1 /* AIChat.xcdatamodel */,
+			);
+			currentVersion = 183F84A62FB1C88E004750B1 /* AIChat.xcdatamodel */;
+			path = AIChat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 183F848F2FB1C88B004750B1 /* Project object */;
+}
