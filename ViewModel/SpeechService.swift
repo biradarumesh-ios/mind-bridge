@@ -60,7 +60,7 @@ class SpeechService: ObservableObject {
                         text: text,
                         messageID: messageID
                     )
-                }
+               }
             }
         }
     }
