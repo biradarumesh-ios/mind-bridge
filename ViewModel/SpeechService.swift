@@ -52,7 +52,7 @@ class SpeechService: ObservableObject {
                     playAudio(audioData, messageID: messageID)
                 }
             } catch {
-                print("❌ ElevenLabs error: \(error)")
+                print("ElevenLabs error: \(error)")
                 await MainActor.run {
                     isLoading = false
                     // Fallback to Apple TTS

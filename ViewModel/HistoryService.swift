@@ -83,6 +83,22 @@ class HistoryService: ObservableObject {
         save()
     }
     
+    // MARK: - Rename conversation
+    func renameConversation(_ id: UUID, newTitle: String) {
+        guard let index = conversations.firstIndex(
+            where: { $0.id == id }
+        ) else { return }
+        
+        let trimmed = newTitle.trimmingCharacters(
+            in: .whitespacesAndNewlines
+        )
+        
+        guard !trimmed.isEmpty else { return }
+        
+        conversations[index].title = trimmed
+        save()
+    }
+    
     // MARK: - Clear all history
     func clearAll() {
         conversations.removeAll()

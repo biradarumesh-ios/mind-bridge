@@ -10,9 +10,10 @@ import Foundation
 class GeminiService: ObservableObject {
     
     // Your OpenRouter API key
-    private let apiKey = "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"
+    private let apiKey = "add free api key here"
     
     private let baseURL = "https://openrouter.ai/api/v1/chat/completions"
+    private var systemPrompt = AIPersona.helpful.systemPrompt
     
     func sendMessage(
         messages: [ChatMessage],
@@ -29,16 +30,8 @@ class GeminiService: ObservableObject {
         request.setValue("AIChat iOS App", forHTTPHeaderField: "X-Title")
         
         // Convert messages to OpenAI format
-        var apiMessages: [[String: String]] = [
-            ["role": "system", "content": """
-            You are a helpful AI assistant with vision capabilities.
-            Always respond in the same language the user writes or speaks in.
-            If the user speaks Hindi — respond in Hindi.
-            If the user speaks Marathi — respond in Marathi.
-            If the user speaks Tamil — respond in Tamil.
-            And so on for any language.
-            When the user shares an image, describe and analyse it in detail.
-            """]
+        var apiMessages: [[String: Any]] = [
+            ["role": "system", "content": systemPrompt]
         ]
         
         for message in messages {
@@ -49,7 +42,7 @@ class GeminiService: ObservableObject {
         }
         
         let body: [String: Any] = [
-            "model": "nvidia/nemotron-3-super-120b-a12b:free",
+            "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
             "messages": apiMessages,
             "stream": true,
             "max_tokens": 1024,
@@ -63,12 +56,12 @@ class GeminiService: ObservableObject {
         request.httpBody = jsonData
         
         do {
-            print("📤 Sending to OpenRouter...")
+            print("Sending to OpenRouter...")
             
             let (stream, response) = try await URLSession.shared.bytes(for: request)
             
             if let httpResponse = response as? HTTPURLResponse {
-                print("📡 HTTP Status: \(httpResponse.statusCode)")
+                print("HTTP Status: \(httpResponse.statusCode)")
             }
             
             for try await line in stream.lines {
@@ -108,5 +101,13 @@ class GeminiService: ObservableObject {
                 onComplete()
             }
         }
+    }
+    
+    // MARK: - Update system prompt for persona
+    func updateSystemPrompt(_ prompt: String) {
+        systemPrompt = prompt.isEmpty
+            ? AIPersona.helpful.systemPrompt
+            : prompt
+        print("System prompt updated")
     }
 }

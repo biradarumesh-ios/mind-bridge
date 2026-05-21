@@ -17,6 +17,11 @@ struct SideMenuView: View {
     @State private var showDeleteAlert = false
     @State private var showClearAllAlert = false
     
+    // Rename states
+    @State private var conversationToRename: Conversation? = nil
+    @State private var showRenameAlert = false
+    @State private var renameText = ""
+    
     var body: some View {
         VStack(spacing: 0) {
             
@@ -81,24 +86,65 @@ struct SideMenuView: View {
                                     isMenuOpen = false
                                 }
                             }
+                            // MARK: - Swipe actions
                             .swipeActions(
                                 edge: .trailing,
-                                allowsFullSwipe: true
+                                allowsFullSwipe: false
                             ) {
+                                // Delete button
                                 Button(role: .destructive) {
                                     conversationToDelete = conversation
                                     showDeleteAlert = true
                                 } label: {
                                     Label("Delete", systemImage: "trash")
                                 }
+                                
+                                // Rename button
+                                Button {
+                                    conversationToRename = conversation
+                                    renameText = conversation.title
+                                    showRenameAlert = true
+                                } label: {
+                                    Label("Rename", systemImage: "pencil")
+                                }
+                                .tint(.orange)
                             }
+                            // MARK: - Long press context menu
                             .contextMenu {
+                                // Rename option
+                                Button {
+                                    conversationToRename = conversation
+                                    renameText = conversation.title
+                                    showRenameAlert = true
+                                } label: {
+                                    Label(
+                                        "Rename",
+                                        systemImage: "pencil"
+                                    )
+                                }
+                                
+                                // Select option
+                                Button {
+                                    selectedConversationID = conversation.id
+                                    withAnimation {
+                                        isMenuOpen = false
+                                    }
+                                } label: {
+                                    Label(
+                                        "Open chat",
+                                        systemImage: "bubble.left"
+                                    )
+                                }
+                                
+                                Divider()
+                                
+                                // Delete option
                                 Button(role: .destructive) {
                                     conversationToDelete = conversation
                                     showDeleteAlert = true
                                 } label: {
                                     Label(
-                                        "Delete conversation",
+                                        "Delete",
                                         systemImage: "trash"
                                     )
                                 }
@@ -153,6 +199,31 @@ struct SideMenuView: View {
         }
         .background(Color(.systemBackground))
         
+        // MARK: - Rename alert
+        .alert(
+            "Rename conversation",
+            isPresented: $showRenameAlert
+        ) {
+            TextField("Conversation title", text: $renameText)
+            
+            Button("Save") {
+                if let conv = conversationToRename {
+                    history.renameConversation(
+                        conv.id,
+                        newTitle: renameText
+                    )
+                }
+                conversationToRename = nil
+                renameText = ""
+            }
+            Button("Cancel", role: .cancel) {
+                conversationToRename = nil
+                renameText = ""
+            }
+        } message: {
+            Text("Enter a new name for this conversation")
+        }
+        
         // MARK: - Delete single conversation alert
         .alert(
             "Delete conversation?",
@@ -173,7 +244,6 @@ struct SideMenuView: View {
                 }
             }
         } message: {
-            // used plain string concatenation instead
             Text(
                 (conversationToDelete?.title ?? "This chat") +
                 " will be permanently deleted."

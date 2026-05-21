@@ -12,6 +12,13 @@ struct ContentView: View {
     @StateObject private var gemini = GeminiService()
     
     // Track if last message was sent via voice
+    @State private var currentPersona: AIPersona = .helpful
+    @State private var showPDFPreview = false
+    @State private var pdfData: Data? = nil
+    @State private var customPrompt: String = ""
+    @State private var showPersonaPicker = false
+    @State private var showShareSheet = false
+    @State private var shareText = ""
     @State private var lastInputWasVoice: Bool = false
     @State private var messages: [ChatMessage] = []
     @State private var inputText: String = ""
@@ -61,12 +68,44 @@ struct ContentView: View {
                     Spacer()
                     
                     // New chat button
-                    Button {
-                        startNewChat()
-                    } label: {
-                        Image(systemName: "square.and.pencil")
-                            .font(.system(size: 20))
-                            .foregroundColor(.blue)
+                    HStack(spacing: 16) {
+                        
+                        // Share button
+                        if !messages.isEmpty {
+                            Button {
+                                shareConversation()
+                            } label: {
+                                Image(systemName: "square.and.arrow.up")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.blue)
+                            }
+                        }
+                        
+                        // PDF export button
+                            Button {
+                                exportAsPDF()
+                            } label: {
+                                Image(systemName: "doc.richtext")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.blue)
+                            }
+                        
+                        // Persona shows current persona emoji
+                        Button {
+                            showPersonaPicker = true
+                        } label: {
+                            Text(currentPersona.emoji)
+                                .font(.system(size: 22))
+                        }
+                        
+                        // New chat button
+                        Button {
+                            startNewChat()
+                        } label: {
+                            Image(systemName: "square.and.pencil")
+                                .font(.system(size: 20))
+                                .foregroundColor(.blue)
+                        }
                     }
                 }
                 .padding(.horizontal, 16)
@@ -334,6 +373,28 @@ struct ContentView: View {
         .sheet(isPresented: $showSettings) {
             SettingsView(history: history)
         }
+        .sheet(isPresented: $showShareSheet) {
+            ShareSheet(items: [shareText])
+        }
+        
+        .sheet(isPresented: $showPersonaPicker) {
+            PersonaPickerView(
+                selectedPersona: $currentPersona,
+                customPrompt: $customPrompt,
+                onSave: {
+                    // Update system prompt in gemini service
+                    let prompt = currentPersona == .custom
+                        ? customPrompt
+                        : currentPersona.systemPrompt
+                    gemini.updateSystemPrompt(prompt)
+                }
+            )
+        }
+        .sheet(isPresented: $showPDFPreview) {
+            if let data = pdfData {
+                PDFPreviewView(pdfData: data)
+            }
+        }
     }
     
     // MARK: - Current title
@@ -353,6 +414,8 @@ struct ContentView: View {
         inputText = ""
         selectedImage = nil
         currentConversationID = nil
+        currentPersona = .helpful
+        customPrompt = ""
     }
     
     // MARK: - Load conversation
@@ -365,7 +428,7 @@ struct ContentView: View {
         currentConversationID = id
     }
     
-    // MARK: - Send message
+  
     // MARK: - Send message
     func sendMessage() {
         let text = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -469,6 +532,52 @@ struct ContentView: View {
             messages.removeLast()
         }
     }
+    
+    // MARK: - Share conversation
+    func shareConversation() {
+        var text = "AI Chat Conversation\n"
+        text += "========================\n\n"
+        
+        for message in messages {
+            if message.role == .user {
+                text += "You:\n\(message.text)\n\n"
+            } else {
+                text += "AI:\n\(message.text)\n\n"
+            }
+            text += "------------------------\n\n"
+        }
+        
+        text += "Shared from AIChat App"
+        
+        shareText = text
+        
+        // Haptic
+        let impact = UIImpactFeedbackGenerator(style: .light)
+        impact.impactOccurred()
+        
+        showShareSheet = true
+    }
+    
+    // MARK: - Export as PDF
+    func exportAsPDF() {
+        let title = currentConversationID.flatMap { id in
+            history.conversations.first { $0.id == id }?.title
+        } ?? "AI Conversation"
+        
+        guard let data = PDFExportService.generatePDF(
+            messages: messages,
+            title: title
+        ) else { return }
+        
+        pdfData = data
+        
+        let impact = UIImpactFeedbackGenerator(style: .medium)
+        impact.impactOccurred()
+        
+        showPDFPreview = true
+    }
+    
+    
 }
 
 // MARK: - Image picker
@@ -599,6 +708,25 @@ struct TypingIndicator: View {
         .clipShape(RoundedRectangle(cornerRadius: 18))
         .onAppear { animate = true }
     }
+}
+
+// MARK: - Share sheet
+struct ShareSheet: UIViewControllerRepresentable {
+    let items: [Any]
+    
+    func makeUIViewController(
+        context: Context
+    ) -> UIActivityViewController {
+        UIActivityViewController(
+            activityItems: items,
+            applicationActivities: nil
+        )
+    }
+    
+    func updateUIViewController(
+        _ uiViewController: UIActivityViewController,
+        context: Context
+    ) {}
 }
 
 #Preview {
