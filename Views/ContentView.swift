@@ -11,7 +11,7 @@ struct ContentView: View {
     @StateObject private var history = HistoryService()
     @StateObject private var gemini = GeminiService()
     
-    // Track if last message was sent via voice
+    
     @State private var currentPersona: AIPersona = .helpful
     @State private var showPDFPreview = false
     @State private var pdfData: Data? = nil

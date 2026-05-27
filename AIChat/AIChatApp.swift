@@ -9,9 +9,21 @@ import SwiftUI
 
 @main
 struct AIChatApp: App {
+    
+    @AppStorage ("hasCompletedOnboarding") var hasCompletedOnboarding = false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            
+            if hasCompletedOnboarding {
+                ContentView()
+            }else{
+                
+                OnboardingView{
+                    hasCompletedOnboarding = true
+                }
+                
+            }
         }
     }
 }

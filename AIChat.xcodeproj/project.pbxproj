@@ -18,6 +18,7 @@
 		18171DED2FBB39A000B09C7F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 18171DEC2FBB39A000B09C7F /* settings.png */; };
 		18171DEF2FBB39A600B09C7F /* voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 18171DEE2FBB39A600B09C7F /* voice.png */; };
 		18171DF12FBB3A5900B09C7F /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18171DF02FBB3A5900B09C7F /* image.png */; };
+		182368CC2FC6CCAD007B7207 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182368CB2FC6CCAD007B7207 /* OnboardingView.swift */; };
 		183F849B2FB1C88B004750B1 /* AIChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F849A2FB1C88B004750B1 /* AIChatApp.swift */; };
 		183F849D2FB1C88B004750B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F849C2FB1C88B004750B1 /* ContentView.swift */; };
 		183F849F2FB1C88E004750B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183F849E2FB1C88E004750B1 /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		18171DEC2FBB39A000B09C7F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		18171DEE2FBB39A600B09C7F /* voice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voice.png; sourceTree = "<group>"; };
 		18171DF02FBB3A5900B09C7F /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		182368CB2FC6CCAD007B7207 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		183F84972FB1C88B004750B1 /* AIChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		183F849A2FB1C88B004750B1 /* AIChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatApp.swift; sourceTree = "<group>"; };
 		183F849C2FB1C88B004750B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				183F84D52FB200D9004750B1 /* SettingsView.swift */,
 				18C1EE922FBEEB9800069B2A /* PersonaPickerView.swift */,
 				18C1EE962FBF111F00069B2A /* PDFPreviewView.swift */,
+				182368CB2FC6CCAD007B7207 /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				1809A66C2FB3189E0020DC7C /* VoiceLanguage.swift in Sources */,
 				183F84CA2FB1C8EE004750B1 /* ChatMessage.swift in Sources */,
 				1809A6662FB30A590020DC7C /* VoiceInputService.swift in Sources */,
+				182368CC2FC6CCAD007B7207 /* OnboardingView.swift in Sources */,
 				18C1EE972FBF111F00069B2A /* PDFPreviewView.swift in Sources */,
 				183F84CC2FB1C918004750B1 /* GeminiService.swift in Sources */,
 				183F849B2FB1C88B004750B1 /* AIChatApp.swift in Sources */,

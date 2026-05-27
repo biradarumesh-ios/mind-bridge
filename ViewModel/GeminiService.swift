@@ -10,7 +10,7 @@ import Foundation
 class GeminiService: ObservableObject {
     
     // Your OpenRouter API key
-    private let apiKey = "add free api key here"
+    private let apiKey = "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"
     
     private let baseURL = "https://openrouter.ai/api/v1/chat/completions"
     private var systemPrompt = AIPersona.helpful.systemPrompt

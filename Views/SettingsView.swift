@@ -179,3 +179,9 @@ struct SettingsView: View {
         .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }
+
+
+
+#Preview {
+    SettingsView(history: HistoryService())
+}
