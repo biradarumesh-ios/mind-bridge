@@ -69,7 +69,8 @@ struct OnboardingView: View {
                 
                 ZStack{
                     
-                    Circle().fill(pages[currentPage].iconColor.opacity(0.8))
+                    Circle()
+                        .fill(pages[currentPage].iconColor.opacity(0.8))
                         .frame(width: 160, height: 160)
                         .scaleEffect(animateIcon ? 1.1 : 1.0)
                         .animation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true),value: animateIcon)

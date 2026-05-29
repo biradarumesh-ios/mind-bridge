@@ -14,13 +14,16 @@ struct SettingsView: View {
     @AppStorage("isDarkMode") var isDarkMode = false
     @AppStorage("userName") var userName = ""
     @AppStorage("aiPersonality") var aiPersonality = "Helpful"
+    @AppStorage("hasCompletedOnboarding") var hasCompletedOnboarding = true
     @State private var showClearConfirm = false
+    @State private var showSignOutConfirm = false
     @State private var editingName = false
     
     let personalities = ["Helpful", "Friendly", "Professional", "Concise"]
     
     var body: some View {
-        NavigationView {
+       
+        NavigationStack {
             List {
                 
                 // MARK: - Profile section
@@ -30,10 +33,14 @@ struct SettingsView: View {
                             Circle()
                                 .fill(Color.blue.opacity(0.15))
                                 .frame(width: 56, height: 56)
-                            Text(userName.isEmpty ? "?" : String(userName.prefix(1)).uppercased())
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.blue)
+                            Text(
+                                userName.isEmpty
+                                ? "?"
+                                : String(userName.prefix(1)).uppercased()
+                            )
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.blue)
                         }
                         
                         VStack(alignment: .leading, spacing: 2) {
@@ -105,8 +112,10 @@ struct SettingsView: View {
                             systemImage: "text.bubble"
                         )
                         Spacer()
-                        Text("\(history.conversations.flatMap { $0.messages }.count)")
-                            .foregroundColor(.secondary)
+                        Text(
+                            "\(history.conversations.flatMap { $0.messages }.count)"
+                        )
+                        .foregroundColor(.secondary)
                     }
                 } header: {
                     Text("Stats")
@@ -126,6 +135,22 @@ struct SettingsView: View {
                     Text("Data")
                 } footer: {
                     Text("This will permanently delete all your conversations")
+                }
+                
+                // MARK: - Account section
+                Section {
+                    Button(role: .destructive) {
+                        showSignOutConfirm = true
+                    } label: {
+                        Label(
+                            "Sign out",
+                            systemImage: "rectangle.portrait.and.arrow.right"
+                        )
+                    }
+                } header: {
+                    Text("Account")
+                } footer: {
+                    Text("You will be taken back to the welcome screen")
                 }
                 
                 // MARK: - About section
@@ -162,7 +187,12 @@ struct SettingsView: View {
                     .fontWeight(.medium)
                 }
             }
-            .alert("Clear all history?", isPresented: $showClearConfirm) {
+            
+            // MARK: - Clear history alert
+            .alert(
+                "Clear all history?",
+                isPresented: $showClearConfirm
+            ) {
                 Button("Cancel", role: .cancel) {}
                 Button("Clear all", role: .destructive) {
                     history.clearAll()
@@ -170,7 +200,28 @@ struct SettingsView: View {
             } message: {
                 Text("This will permanently delete all your conversations and cannot be undone.")
             }
-            .alert("Your name", isPresented: $editingName) {
+            
+            // MARK: - Sign out alert
+            .alert(
+                "Sign out?",
+                isPresented: $showSignOutConfirm
+            ) {
+                Button("Cancel", role: .cancel) {}
+                Button("Sign out", role: .destructive) {
+                    history.clearAll()
+                    userName = ""
+                    hasCompletedOnboarding = false
+                    dismiss()
+                }
+            } message: {
+                Text("This will clear your chat history and take you back to the welcome screen.")
+            }
+            
+            // MARK: - Edit name alert
+            .alert(
+                "Your name",
+                isPresented: $editingName
+            ) {
                 TextField("Enter your name", text: $userName)
                 Button("Save") {}
                 Button("Cancel", role: .cancel) {}
@@ -179,8 +230,6 @@ struct SettingsView: View {
         .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }
-
-
 
 #Preview {
     SettingsView(history: HistoryService())
