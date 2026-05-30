@@ -27,6 +27,7 @@ struct ContentView: View {
     @State private var selectedImage: UIImage? = nil
     @State private var showImagePicker = false
     @State private var showCamera = false
+    @State private var showSearch = false
     @State private var showAttachmentOptions = false
     @State private var keyboardHeight: CGFloat = 0
     @State private var isMenuOpen = false
@@ -330,7 +331,8 @@ struct ContentView: View {
                 ),
                 isMenuOpen: $isMenuOpen,
                 onNewChat: { startNewChat() },
-                onSettingsTapped: { showSettings = true }
+                onSettingsTapped: { showSettings = true },
+                onSearchTapped: { showSearch = true }
             )
             .frame(width: 280)
             .offset(x: isMenuOpen ? 0 : -280)
@@ -394,6 +396,14 @@ struct ContentView: View {
             if let data = pdfData {
                 PDFPreviewView(pdfData: data)
             }
+        }
+        .sheet(isPresented: $showSearch) {
+            SearchView(
+                history: history,
+                onConversationSelected: { id in
+                    loadConversation(id: id)
+                }
+            )
         }
     }
     

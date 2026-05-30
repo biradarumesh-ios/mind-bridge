@@ -12,6 +12,7 @@ struct SideMenuView: View {
     @Binding var isMenuOpen: Bool
     var onNewChat: () -> Void
     var onSettingsTapped: () -> Void
+    var onSearchTapped: () -> Void
     
     @State private var conversationToDelete: Conversation? = nil
     @State private var showDeleteAlert = false
@@ -35,17 +36,33 @@ struct SideMenuView: View {
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
+                
                 Spacer()
                 
-                Button {
-                    onNewChat()
-                    withAnimation {
-                        isMenuOpen = false
+                HStack(spacing: 16) {
+                    // Search button
+                    Button {
+                        onSearchTapped()
+                        withAnimation {
+                            isMenuOpen = false
+                        }
+                    } label: {
+                        Image(systemName: "magnifyingglass")
+                            .font(.system(size: 18))
+                            .foregroundColor(.blue)
                     }
-                } label: {
-                    Image(systemName: "square.and.pencil")
-                        .font(.system(size: 20))
-                        .foregroundColor(.blue)
+                    
+                    // New chat button
+                    Button {
+                        onNewChat()
+                        withAnimation {
+                            isMenuOpen = false
+                        }
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                            .font(.system(size: 20))
+                            .foregroundColor(.blue)
+                    }
                 }
             }
             .padding(.horizontal, 20)

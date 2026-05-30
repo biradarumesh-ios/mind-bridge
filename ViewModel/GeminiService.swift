@@ -42,7 +42,7 @@ class GeminiService: ObservableObject {
         }
         
         let body: [String: Any] = [
-            "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+            "model": "nvidia/nemotron-3-super-120b-a12b:free",
             "messages": apiMessages,
             "stream": true,
             "max_tokens": 1024,
